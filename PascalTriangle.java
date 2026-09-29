@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class PascalTriangle {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows: ");
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+
+            // Print spaces for triangle shape
+            for (int space = 0; space < n - i; space++) {
+                System.out.print(" ");
+            }
+
+            int number = 1;
+
+            // Print numbers in each row
+            for (int j = 0; j <= i; j++) {
+                System.out.print(number + " ");
+
+                number = number * (i - j) / (j + 1);
+            }
+
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
